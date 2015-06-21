@@ -1,0 +1,8 @@
+#html_template定义页面模板，例如登录页面模板是login.html文件。
+
+#mysql部分定义数据库连接信息。
+[mysql]
+host = localhost
+database = assignment_pingtai
+user = root
+password =
