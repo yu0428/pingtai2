@@ -1,0 +1,52 @@
+#html_template定义页面模板，例如登录页面模板是login.html文件。
+[html_template]
+template_dir = html_template
+login_page = login.html
+register_page = register.html
+main_page = main.html
+upload_page = upload.html
+error_page =
+
+[login_page]
+login_form_action = portal.py?action=authenticate
+login_name = name
+login_password = password
+get_register_page = portal.py?action=register
+login_error =
+
+[register_page]
+register_form_action = portal.py?action=create_new_user
+register_name = name
+register_first_password = first_password
+register_second_password = second_password
+get_login_page = portal.py?action=login
+register_error =
+
+[main_page]
+upload_link = portal.py?action=upload_page
+check_link = portal.py?action=check_image_file
+logout_link = portal.py?action=logout
+
+[upload_page]
+upload_form_action = portal.py?action=upload_image_file
+image_file = image_file
+
+[error_page]
+
+# 定义各个请求的handler
+[handler]
+login = view.handler.LoginHandler
+logout = view.handler.LogoutHandler
+register = view.handler.RegisterHandler
+authenticate = view.handler.AuthenticateHandler
+create_new_user = view.handler.CreateNewUserHandler
+upload_page = view.handler.UploadPageHandler
+upload_image_file = view.handler.UploadImageFileHandler
+check_image_file = view.handler.CheckImageFileHandler
+
+#mysql部分定义数据库连接信息。
+[mysql]
+host = localhost
+database = assignment_pingtai
+user = root
+password =
